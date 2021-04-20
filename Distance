@@ -1,0 +1,10 @@
+def DistanceHaversine(a, b, c, d, e): # lat[1], lat[2], long[1], long[2], av lat
+    import numpy as np
+    a = a * np.pi / 180
+    b = b * np.pi / 180
+    c = c * np.pi / 180
+    d = d * np.pi / 180
+    x = np.sin((b - a)/2)**2 + np.cos(a)*np.cos(b)*np.sin((d - c)/2)**2
+    y = 2*np.arctan2(np.sqrt(float(x)), np.sqrt(1-float(x)))
+    d = e * y
+    return d   
